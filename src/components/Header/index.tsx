@@ -7,10 +7,14 @@ import { useTranslation } from 'react-i18next'
 
 import styled from 'styled-components'
 
+import Logo from '../../assets/svg/logo.png'
+import LogoDark from '../../assets/svg/logo.png'
+
+
 // import Logo from '../../assets/svg/logo.svg'
 // import LogoDark from '../../assets/svg/logo_white.svg'
 import { useActiveWeb3React } from '../../hooks'
-// import { useDarkModeManager } from '../../state/user/hooks'
+import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances, useAggregateUniBalance } from '../../state/wallet/hooks'
 import { CardNoise } from '../earn/styled'
 import { CountUp } from 'use-count-up'
@@ -18,7 +22,7 @@ import { TYPE } from '../../theme'
 
 import { YellowCard } from '../Card'
 import Settings from '../Settings'
-import Menu from '../Menu'
+//import Menu from '../Menu'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
@@ -134,7 +138,7 @@ const UNIAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #ff007a 0%, #2172e5 100%), #edeef2;
+  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #F76E11 0%, #2172e5 100%), #edeef2;
 `
 
 const UNIWrapper = styled.span`
@@ -190,12 +194,12 @@ const Title = styled.a`
   }
 `
 
-// const UniIcon = styled.div`
-//   transition: transform 0.3s ease;
-//   :hover {
-//     transform: rotate(-5deg);
-//   }
-// `
+const MimicIcon = styled.div`
+  transition: transform 0.3s ease;
+   :hover {
+     transform: rotate(-5deg);
+   }
+ `
 
 const activeClassName = 'ACTIVE'
 
@@ -238,7 +242,7 @@ function Header({ history }: { history: any }) {
   const { t } = useTranslation()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
-  // const [isDark] = useDarkModeManager()
+  const [isDark] = useDarkModeManager()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -262,9 +266,9 @@ function Header({ history }: { history: any }) {
       </Modal>
       <HeaderRow>
         <Title href="." style={{}}>
-          {/* <UniIcon>
-            <img width={'24px'} src={isDark ? LogoDark : Logo} alt="logo" />
-          </UniIcon> */}
+           <MimicIcon>
+            <img width={'36px'} src={isDark ? LogoDark : Logo} alt="logo" />
+          </MimicIcon> 
           <div style={{ color: 'white', textDecoration: 'none' }}>Mimic Exchange</div>
         </Title>
         <HeaderLinks>
@@ -336,7 +340,7 @@ function Header({ history }: { history: any }) {
         </HeaderElement>
         <HeaderElementWrap>
           <Settings />
-          <Menu />
+          {/*<Menu />*/}
         </HeaderElementWrap>
       </HeaderControls>
     </HeaderFrame>
