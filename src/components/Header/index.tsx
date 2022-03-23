@@ -10,7 +10,6 @@ import styled from 'styled-components'
 import Logo from '../../assets/svg/logo.png'
 import LogoDark from '../../assets/svg/logo.png'
 
-
 // import Logo from '../../assets/svg/logo.svg'
 // import LogoDark from '../../assets/svg/logo_white.svg'
 import { useActiveWeb3React } from '../../hooks'
@@ -138,7 +137,7 @@ const UNIAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #F76E11 0%, #2172e5 100%), #edeef2;
+  background: radial-gradient(174.47% 188.91% at 1.84% 0%, #f76e11 0%, #2172e5 100%), #edeef2;
 `
 
 const UNIWrapper = styled.span`
@@ -197,10 +196,10 @@ const Title = styled.a`
 const MimicIcon = styled.div`
   margin-right: 8px;
   transition: transform 0.3s ease;
-   :hover {
-     transform: rotate(-5deg);
-   }
- `
+  :hover {
+    transform: rotate(-5deg);
+  }
+`
 
 const activeClassName = 'ACTIVE'
 
@@ -266,11 +265,11 @@ function Header({ history }: { history: any }) {
         <UniBalanceContent setShowUniBalanceModal={setShowUniBalanceModal} />
       </Modal>
       <HeaderRow>
-        <Title href="." style={{}}>
-           <MimicIcon>
-            <img width={'36px'} src={isDark ? LogoDark : Logo} alt="logo"  />
-          </MimicIcon> 
-          <div style={{ color: 'white', textDecoration: 'none' }}>Mimic Exchange</div>
+        <Title style={{ textDecoration: 'none' }} href=".">
+          <MimicIcon>
+            <img width={'36px'} src={isDark ? LogoDark : Logo} alt="logo" />
+          </MimicIcon>
+          <div style={{ color: isDark ? 'white' : 'black' }}>Mimic Exchange</div>
         </Title>
         <HeaderLinks>
           <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => history.location.pathname.includes('/swap')}>

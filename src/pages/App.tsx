@@ -33,10 +33,14 @@ import Vote from './Vote'
 import VotePage from './Vote/VotePage'
 
 const AppWrapper = styled.div`
-  display: flex;
+  display: auto;
   flex-flow: column;
-  align-items: flex-start;
   overflow-x: hidden;
+  justify-content: center;
+  @media (min-width: 992px) {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 `
 
 const HeaderWrapper = styled.div`

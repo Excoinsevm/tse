@@ -45,6 +45,11 @@ import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
 import Loader from '../../components/Loader'
 
+import { useDarkModeManager } from '../../state/user/hooks'
+import styled from 'styled-components'
+// import Logo from '../../assets/svg/logo.png'
+// import LogoDark from '../../assets/svg/logo.png'
+
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
 
@@ -264,8 +269,22 @@ export default function Swap() {
     onCurrencySelection
   ])
 
+  // const MimicIcon = styled.div`
+  //   margin-right: 8px;
+  //   transition: transform 0.3s ease;
+  //   :hover {
+  //     transform: rotate(-5deg);
+  //   }
+  // `
+  const [isDark] = useDarkModeManager()
   return (
     <>
+      {/* <MimicIcon>
+        <img width={'70px'} src={isDark ? LogoDark : Logo} alt="logo" />
+      </MimicIcon> */}
+      <Text style={{ marginBottom: '20px' }}>
+        <h1>Mimic Swap</h1>
+      </Text>
       <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
