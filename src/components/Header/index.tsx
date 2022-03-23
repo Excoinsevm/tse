@@ -195,6 +195,7 @@ const Title = styled.a`
 `
 
 const MimicIcon = styled.div`
+  margin-right: 8px;
   transition: transform 0.3s ease;
    :hover {
      transform: rotate(-5deg);
@@ -267,7 +268,7 @@ function Header({ history }: { history: any }) {
       <HeaderRow>
         <Title href="." style={{}}>
            <MimicIcon>
-            <img width={'36px'} src={isDark ? LogoDark : Logo} alt="logo" />
+            <img width={'36px'} src={isDark ? LogoDark : Logo} alt="logo"  />
           </MimicIcon> 
           <div style={{ color: 'white', textDecoration: 'none' }}>Mimic Exchange</div>
         </Title>
