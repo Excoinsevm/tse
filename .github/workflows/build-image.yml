@@ -7,7 +7,7 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
-  deploy-to-production:
+  build-docker-image:
     runs-on: ubuntu-latest
 
     steps:
