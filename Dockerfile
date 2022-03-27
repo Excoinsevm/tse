@@ -10,7 +10,7 @@ RUN yarn install --production
 # Copy app files
 COPY . .
 # Build the app
-RUN npm i react-scripts
+RUN yarn global add react react-dom react-scripts
 RUN yarn build
 
 # Bundle static assets with nginx
