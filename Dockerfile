@@ -1,4 +1,4 @@
-FROM node:14-alpine AS builder
+FROM node:16-alpine AS builder
 ENV NODE_ENV production
 # Add a work directory
 WORKDIR /app
@@ -10,7 +10,6 @@ RUN yarn install --production
 # Copy app files
 COPY . .
 # Build the app
-RUN yarn global add react react-dom react-scripts
 RUN yarn build
 
 # Bundle static assets with nginx
