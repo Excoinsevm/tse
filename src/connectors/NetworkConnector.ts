@@ -36,7 +36,7 @@ class MiniRpcProvider implements AsyncSendable {
   public readonly path: string
   public readonly batchWaitTimeMs: number
 
-  private nextId = 1
+  private nextId = 7171
   private batchTimeoutId: ReturnType<typeof setTimeout> | null = null
   private batch: BatchItem[] = []
 

@@ -1,11 +1,13 @@
-import { ChainId, Token } from '@uniswap/sdk'
-import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
+import { ChainId, Token } from '@popswap/sdk'
+import { Tags, TokenInfo, TokenList } from '@popswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { AppState } from '../index'
 
 type TagDetails = Tags[keyof Tags]
 export interface TagInfo extends TagDetails {
+  description: string
+  name: string
   id: string
 }
 
@@ -31,10 +33,6 @@ export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [token
  * An empty result, useful as a default.
  */
 const EMPTY_LIST: TokenAddressMap = {
-  [ChainId.KOVAN]: {},
-  [ChainId.RINKEBY]: {},
-  [ChainId.ROPSTEN]: {},
-  [ChainId.GÖRLI]: {},
   [ChainId.MAINNET]: {}
 }
 

@@ -17,7 +17,7 @@ import { isAddress } from 'ethers/lib/utils'
 import Confetti from '../Confetti'
 import { CardNoise, CardBGImage, CardBGImageSmaller } from '../earn/styled'
 import { useIsTransactionPending } from '../../state/transactions/hooks'
-import { TokenAmount } from '@uniswap/sdk'
+import { TokenAmount } from '@popswap/sdk'
 import { getEtherscanLink, shortenAddress } from '../../utils'
 
 const ContentWrapper = styled(AutoColumn)`
@@ -26,7 +26,7 @@ const ContentWrapper = styled(AutoColumn)`
 
 const ModalUpper = styled(DataCard)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #F76E11 0%, #021d43 100%);
+  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #f76e11 0%, #021d43 100%);
 `
 
 const ConfirmOrLoadingWrapper = styled.div<{ activeBG: boolean }>`

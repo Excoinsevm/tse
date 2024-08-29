@@ -1,4 +1,4 @@
-import { ChainId, TokenAmount, JSBI } from '@uniswap/sdk'
+import { ChainId, TokenAmount, JSBI } from '@popswap/sdk'
 import React, { useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink, withRouter } from 'react-router-dom'
@@ -231,10 +231,7 @@ const StyledNavLink = styled(NavLink).attrs({
 `
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
-  [ChainId.RINKEBY]: 'Rinkeby',
-  [ChainId.ROPSTEN]: 'Ropsten',
-  [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan'
+  [ChainId.MAINNET]: 'Bitrock'
 }
 
 function Header({ history }: { history: any }) {
@@ -286,13 +283,19 @@ function Header({ history }: { history: any }) {
           >
             {t('pool')}
           </StyledNavLink>
+          <StyledNavLink id={`earn`} to={'/uni'} isActive={() => history.location.pathname.includes('/uni')}>
+            {t('earn')}
+          </StyledNavLink>
+          <StyledNavLink id={`vote`} to={'/vote'} isActive={() => history.location.pathname.includes('/vote')}>
+            {t('vote')}
+          </StyledNavLink>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>
         <HeaderElement>
           <HideSmall>
-            {chainId && NETWORK_LABELS[chainId] && (
-              <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>
+            {chainId && NETWORK_LABELS && (
+              <NetworkCard title={NETWORK_LABELS[7171]}>{NETWORK_LABELS[7171]}</NetworkCard>
             )}
           </HideSmall>
           {availableClaim && !showClaimPopup && (
